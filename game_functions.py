@@ -19,6 +19,7 @@ def check_events(ai_settings, stats, sb, play_button, p1paddle, title_screen):
             mouse_x, mouse_y = pygame.mouse.get_pos()
             check_play_button(ai_settings, stats, sb, play_button, mouse_x, mouse_y)
             check_difficulty(ai_settings, title_screen, mouse_x, mouse_y)
+            check_play_up_to(ai_settings, title_screen, mouse_x, mouse_y)
 
 
 def check_keydown_events(event, p1paddle):
@@ -141,3 +142,14 @@ def check_difficulty(ai_settings, title_screen, mouse_x, mouse_y):
         ai_settings.ai_difficulty = 0.9
     elif title_screen.hardrect.collidepoint(mouse_x, mouse_y):
         ai_settings.ai_difficulty = 1.0
+
+
+def check_play_up_to(ai_settings, title_screen, mouse_x, mouse_y):
+    if title_screen.put5rect.collidepoint(mouse_x, mouse_y):
+        ai_settings.score_limit = 5
+    elif title_screen.put9rect.collidepoint(mouse_x, mouse_y):
+        ai_settings.score_limit = 9
+    elif title_screen.put15rect.collidepoint(mouse_x, mouse_y):
+        ai_settings.score_limit = 15
+    elif title_screen.put21rect.collidepoint(mouse_x, mouse_y):
+        ai_settings.score_limit = 21
