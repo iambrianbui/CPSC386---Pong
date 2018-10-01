@@ -23,13 +23,13 @@ def check_events(ai_settings, stats, sb, play_button, p1paddle, title_screen):
 
 
 def check_keydown_events(event, p1paddle):
-    if event.key == pygame.K_w:
+    if event.key == pygame.K_w or event.key == pygame.K_UP:
         p1paddle.moving_up = True
-    elif event.key == pygame.K_s:
+    elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
         p1paddle.moving_down = True
-    elif event.key == pygame.K_a:
+    elif event.key == pygame.K_a or event.key == pygame.K_LEFT:
         p1paddle.moving_left = True
-    elif event.key == pygame.K_d:
+    elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
         p1paddle.moving_right = True
 
     elif event.key == pygame.K_ESCAPE:
@@ -37,13 +37,13 @@ def check_keydown_events(event, p1paddle):
 
 
 def check_keyup_events(event, p1paddle):
-    if event.key == pygame.K_w:
+    if event.key == pygame.K_w or event.key == pygame.K_UP:
         p1paddle.moving_up = False
-    elif event.key == pygame.K_s:
+    elif event.key == pygame.K_s or event.key == pygame.K_DOWN:
         p1paddle.moving_down = False
-    elif event.key == pygame.K_a:
+    elif event.key == pygame.K_a or event.key == pygame.K_LEFT:
         p1paddle.moving_left = False
-    elif event.key == pygame.K_d:
+    elif event.key == pygame.K_d or event.key == pygame.K_RIGHT:
         p1paddle.moving_right = False
 
 
