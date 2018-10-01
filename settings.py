@@ -24,4 +24,4 @@ class Settings:
         self.ball_y_direction = 1               # 1 = moving down
 
         #  Max score
-        self.score_limit = 1
+        self.score_limit = 5

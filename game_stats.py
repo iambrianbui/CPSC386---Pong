@@ -5,6 +5,7 @@ class GameStats:
         self.reset_stats()
         #  Set the game to active
         self.game_active = False
+        self.victor = ""
 
     def reset_stats(self):
         self.p1score = 0

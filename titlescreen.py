@@ -32,8 +32,8 @@ class TitleScreen:
         self.hardrect = pygame.Rect(0, 0, 128, 64)
         self.hardrect.center = [self.screen_rect.centerx + 118, self.screen_rect.centery + 100]
 
-        self.vrect = pygame.Rect(0, 0, self.width, self.height)
-        self.vrect.center = [self.screen_rect.centerx, self.screen_rect.centery]
+        self.vrect = pygame.Rect(0, 0, 256, 64)
+        self.vrect.center = [self.screen_rect.centerx, self.screen_rect.centery - 100]
 
         #  Play upto
         self.playuptorect = pygame.Rect(0, 0, 196, 64)

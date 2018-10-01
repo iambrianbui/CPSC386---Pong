@@ -59,6 +59,9 @@ def update_screen(ai_settings, screen, stats, sb, p1paddle, p2paddle, ball, play
         play_button.draw_button()
         title_screen.draw_title()
 
+        if stats.victor != "":
+            title_screen.show_victory(stats.victor)
+
     #  Make the most recently drawn screen visible
     pygame.display.flip()
 
@@ -115,9 +118,9 @@ def check_game_over(ai_settings, stats, title_screen):
         stats.game_active = False
         pygame.mouse.set_visible(True)
         if stats.p1score >= ai_settings.score_limit:
-            title_screen.show_victory("Player wins!")
+            stats.victor = "Player wins!"
         if stats.p2score >= ai_settings.score_limit:
-            title_screen.show_victory("AI wins!")
+            stats.victor = "AI wins!"
 
 
 def check_play_button(ai_settings, stats, sb, play_button, mouse_x, mouse_y):
