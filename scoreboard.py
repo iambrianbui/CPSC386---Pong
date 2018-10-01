@@ -12,6 +12,7 @@ class Scoreboard:
         #  Font
         self.text_color = (255, 255, 255)
         self.font = pygame.font.SysFont(None, 48)
+        self.bg = (0, 0, 0)
 
         #  Prepare the HUD
         self.prep_score(ai_settings)
@@ -41,5 +42,17 @@ class Scoreboard:
 
     def dashed_line(self):
         pygame.draw.line(self.screen, self.text_color, [600, 0], [600, 800], 3)
+
+        self.rect = pygame.Rect(0, 0, 128, 64)
+        self.rect.center = [self.screen_rect.centerx, self.screen_rect.bottom - 64]
+
+        msg = "Play to " + str(self.ai_settings.score_limit)
+
+        self.put_image = self.font.render(msg, True, self.text_color, self.bg)
+        self.put_image_rect = self.put_image.get_rect()
+        self.put_image_rect.center = self.rect.center
+
+        self.screen.fill(self.bg, self.rect)
+        self.screen.blit(self.put_image, self.put_image_rect)
 
 
